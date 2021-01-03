@@ -67,10 +67,10 @@
 
           ;; Vertical padding to center
           (insert-char ?\n padding-center)
-          (insert (propertize "GNU Emacs / N Λ N O" 'face 'nano-face-strong))
+          (insert (propertize "GNU Emacs" 'face 'nano-face-strong))
           (center-line)
           (insert "\n")
-          (insert (propertize "Emacs made simple" 'face 'nano-face-faded))
+          (insert (propertize "Keep it simple" 'face 'nano-face-faded))
           (center-line)
 
           (goto-char 0)
@@ -78,7 +78,7 @@
           (local-set-key [t] 'nano-splash-kill)
           (display-buffer-same-window splash-buffer nil)
           (run-with-idle-timer 0.05 nil (lambda() (message nil)))
-          (run-with-idle-timer 0.50 nil 'nano-splash-fade-out-slow)
+          ;; (run-with-idle-timer 0.50 nil 'nano-splash-fade-out-slow)
 	  (if (fboundp 'nano-splash-help-message)
               (run-with-idle-timer 0.55 nil 'nano-splash-help-message))
 	  )
